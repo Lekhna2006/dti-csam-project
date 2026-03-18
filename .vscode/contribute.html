@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contribute Accessibility</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f5f5f5;
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      width: 350px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #4facfe;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #007bff;
+    }
+
+    .options {
+  width: 200px;
+  margin: auto;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 12px 0;
+  font-size: 16px;
+}
+
+.options input {
+  width: 16px;
+  height: 16px;
+}
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Contribute Accessibility</h2>
+
+  <input type="text" id="place" placeholder="Enter Place Name">
+<div class="options">
+  <label>
+    <input type="checkbox"> 
+    <span>Wheelchair Ramp</span>
+  </label>
+
+  <label>
+    <input type="checkbox"> 
+    <span>Elevator</span>
+  </label>
+
+  <label>
+    <input type="checkbox"> 
+    <span>Parking</span>
+  </label>
+
+  <label>
+    <input type="checkbox"> 
+    <span>Restrooms</span>
+  </label>
+</div>
+  <button onclick="submitData()">Submit</button>
+  <button onclick="goBack()">Back</button>
+</div>
+
+<script>
+  function submitData() {
+    var place = document.getElementById("place").value;
+
+    if (place === "") {
+      alert("Please enter place name");
+      return;
+    }
+
+    alert("Thank you! Data submitted for " + place);
+
+    // optional: clear form
+    document.getElementById("place").value = "";
+  }
+
+  function goBack(){
+    window.location.href="details.html";
+  }
+</script>
+
+</body>
+</html>

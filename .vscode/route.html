@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Route Navigation</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #f5f5f5;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+
+    iframe {
+      width: 90%;
+      height: 400px;
+      border: 0;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #4facfe;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Route Navigation</h2>
+<h3 id="routePlace"></h3>
+
+<!-- Google Map -->
+<iframe id="mapFrame"></iframe>
+
+<button onclick="goBack()">Back</button>
+
+<script>
+  var place = localStorage.getItem("place");
+  document.getElementById("routePlace").innerText = place;
+
+  // 👇 Google Maps Embed
+  var mapURL = "https://www.google.com/maps?q=" + place + "&output=embed";
+  document.getElementById("mapFrame").src = mapURL;
+
+  function goBack() {
+    window.location.href = "search.html";
+  }
+</script>
+
+</body>
+</html>

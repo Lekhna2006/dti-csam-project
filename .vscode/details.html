@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Accessibility Details</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f5f5f5;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      width: 350px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #4facfe;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #007bff;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2 id="placeName">Place Name</h2>
+
+  <h3>Accessibility Features:</h3>
+
+  <ul>
+    <li>✔ Wheelchair Ramp</li>
+    <li>✔ Elevator Access</li>
+    <li>✔ Accessible Parking</li>
+    <li>✔ Restrooms Available</li>
+  </ul>
+
+  <button onclick="goToRoute()">Get Route</button>
+  <button onclick="goToContribute()">Contribute</button>
+</div>
+
+<script>
+  // load place name
+  var place = localStorage.getItem("place");
+  document.getElementById("placeName").innerText = place;
+
+  function goToRoute() {
+    window.location.href = "route.html";
+  }
+
+  function goToContribute() {
+  window.location.href = "contribute.html";
+}
+</script>
+
+</body>
+</html>
